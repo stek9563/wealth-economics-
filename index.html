@@ -14,7 +14,12 @@
         .text-section { text-align: left; background: #111; padding: 25px; border-radius: 12px; border: 1px solid #222; margin: 20px 0; }
         .highlight { color: #00a2ff; font-weight: bold; }
         .era-text { font-size: 1.2rem; color: #00a2ff; font-style: italic; margin: 20px 0; border-left: 3px solid #00a2ff; padding-left: 15px; }
+        .cta-button { display: inline-block; background-color: #00a2ff; color: #000; padding: 15px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; margin: 20px 5px; transition: 0.3s; }
+        .cta-button:hover { background-color: #0082cc; transform: scale(1.05); }
         .coming-soon { font-size: 1.5rem; color: #00a2ff; margin-top: 40px; text-transform: uppercase; letter-spacing: 5px; border-top: 1px solid #333; padding-top: 20px; }
+        #cookie-banner { position: fixed; bottom: 0; left: 0; width: 100%; background: #111; border-top: 1px solid #00a2ff; padding: 20px; text-align: center; display: none; z-index: 1000; }
+        .cookie-btn { background: #00a2ff; color: #000; border: none; padding: 10px 20px; border-radius: 5px; font-weight: bold; cursor: pointer; margin-left: 10px; }
+        .visitor-count { margin-top: 50px; font-size: 0.7rem; color: #333; }
     </style>
 </head>
 <body>
@@ -29,12 +34,15 @@
         <div class="text-section">
             <h2>Die Geburtsstunde einer Vision</h2>
             <p>Alles begann mit einer klaren Vision: Die Grenzen des bisher Möglichen zu sprengen. Wo andere nur statische Muster sahen, entstand mit **The Wealth-Core-Economic-System** der Entwurf für eine vollautonome Zukunft.</p>
-            
             <p class="era-text">
                 "Wir läuten ein neues Zeitalter in der Finanzbranche ein – angetrieben durch Blockchain-Technologie, Crypto-Innovationskraft und die Integration von Real World Assets."
             </p>
-            
-            <p>Dieser Weg führte uns weg von veralteten, starren Lösungen hin zu einer Architektur, die sich dynamisch anpasst und die **10M-Singularity** als festes Ziel verfolgt.</p>
+        </div>
+
+        <div>
+            <a href="mailto:Wealth-core-ecosystem@outlook.com?subject=Anfrage: Zugang Warteliste" class="cta-button">ZUGANG ANFORDERN</a>
+            <br>
+            <span style="color: #444; font-size: 0.8rem;">Social Media Accounts: Coming Soon</span>
         </div>
 
         <div class="image-box">
@@ -43,15 +51,45 @@
 
         <div class="text-section">
             <h2>Prädiktive Souveränität</h2>
-            <p>Was früher als Standard galt, ist heute die statische Barriere, die wir erfolgreich gelöst haben. Unsere <span class="highlight">Liquidity Wick Protection</span> ist das Resultat dieser konsequenten Weiterentwicklung innerhalb von **The Wealth-Core-Economic-System**.</p>
+            <p>Was früher als Standard galt, ist heute die statische Barriere, die wir erfolgreich gelöst haben. Unsere <span class="highlight">Liquidity Wick Protection</span> ist das Resultat dieser konsequenten Weiterentwicklung.</p>
             <p>Auf Basis einer hochskalierbaren Infrastruktur agiert unser System dort, wo herkömmliche Modelle versagen.</p>
         </div>
 
         <div class="coming-soon">Coming Soon</div>
 
-        <p style="color: #444; font-size: 0.8rem; margin-top: 40px;">
+        <div class="visitor-count">
+            <p>System-Zugriffe (Tracking aktiv nach Zustimmung)</p>
+            <div id="counter-placeholder"></div>
+        </div>
+
+        <p style="color: #444; font-size: 0.8rem; margin-top: 20px;">
             &copy; 2026 **The Wealth-Core-Economic-System** | Stealth Phase
         </p>
     </div>
+
+    <div id="cookie-banner">
+        <span>Diese Website nutzt Cookies für die Analyse der Systemzugriffe.</span>
+        <button class="cookie-btn" onclick="acceptCookies()">Zustimmen</button>
+    </div>
+
+    <script>
+        function acceptCookies() {
+            document.getElementById('cookie-banner').style.display = 'none';
+            localStorage.setItem('cookiesAccepted', 'true');
+            loadCounter();
+        }
+        function loadCounter() {
+            if(localStorage.getItem('cookiesAccepted') === 'true') {
+                document.getElementById('counter-placeholder').innerHTML = '<img src="https://hitwebcounter.com/counter/counter.php?page=WealthCoreSystem&style=0006&nbdigits=5&type=page&initCount=0" border="0" />';
+            }
+        }
+        window.onload = function() {
+            if(!localStorage.getItem('cookiesAccepted')) {
+                document.getElementById('cookie-banner').style.display = 'block';
+            } else {
+                loadCounter();
+            }
+        };
+    </script>
 </body>
 </html>
